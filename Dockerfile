@@ -1,6 +1,7 @@
 FROM python:3.9.6-slim-buster
 WORKDIR /app
 COPY . .
+RUN apt-get update && apt-get install build-essential -y
 RUN pip3 install --upgrade pip
 RUN pip3 install --upgrade pip setuptools wheel && pip3 install p5py && sudo apt-get install -y pkg-config && pip install PEP517
 
